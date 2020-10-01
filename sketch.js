@@ -44,5 +44,7 @@ function draw() {
 
 }
 
+function readFoodStock(data){
 
-
+  position = data.val();
+}
