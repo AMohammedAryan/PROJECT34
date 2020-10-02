@@ -33,7 +33,7 @@ function draw() {
   fill("black");
   text(foodStock, 250, 150);
 
-  if(keyWentUp(UP_ARROW)){
+  if(keyWentDown(UP_ARROW)){
 
     foodStock = foodStock - 1;
     Dog.addImage(happyDog);
