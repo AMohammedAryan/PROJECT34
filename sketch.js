@@ -31,11 +31,11 @@ function draw() {
 
   textSize(20);
   fill("black");
-  text(foodStock, 250, 150);
+  text(foodS, 250, 150);
 
   if(keyWentDown(UP_ARROW)){
 
-    foodStock = foodStock - 1;
+    writeFoodStock(foodS);
     Dog.addImage(happyDog);
   }
 
@@ -46,5 +46,23 @@ function draw() {
 
 function readFoodStock(data){
 
-  position = data.val();
+  foodS = data.val();
+}
+
+function writeFoodStock(x){
+
+  if (x<=0){
+
+    x = 0;
+  }
+
+  else{
+
+    x = x - 1;
+  }
+
+  database.ref('/').update({
+
+    Food: x
+  })
 }
